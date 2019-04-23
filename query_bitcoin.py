@@ -1,3 +1,25 @@
+'''
+
+This chunk is written using SQL. I queried: https://data.stackexchange.com/stackoverflow/query/
+
+/* Example queries */
+
+select count(*) from users
+select min(lastaccessdate), max(lastaccessdate) from users
+select top 20 location from users
+
+/* Mini-project objective:
+
+I want tags, ID, and date of creation for all posts including the string "bitcoin" in the title or post tags. Using python, I would like to view, clean, and graph the data. I'm specifically interested to know if the StackOverflow mentions of "bitcoin" correlate with the Google search engine mentions of "bitcoin" over time. */
+
+select CreationDate, Tags, Id
+from Posts 
+where Tags like '%bitcoin%' or Title like '%bitcoin%'
+
+/* The query above returned 1590 rows of data. */
+
+'''
+
 # From here on, I'll be using Python to manipulate the data extracted from the StackOverflow data dump database.
 
 # Load pandas library and view first 6 rows of the data frame
