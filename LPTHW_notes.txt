@@ -1,0 +1,26 @@
+# Escape Sequences (ex 10)
+
+\\ Backslash (\)
+\' Single-quote (’)
+\" Double-quote (”)
+\a ASCII bell (BEL)
+\b ASCII backspace (BS)
+\f ASCII formfeed (FF)
+\n ASCII linefeed (LF)
+\N{name} Character named name in the Unicode database (Unicode only)
+\r Carriage Return (CR)
+\t Horizontal Tab (TAB)
+\uxxxx Character with 16-bit hex value xxxx
+\Uxxxxxxxx Character with 32-bit hex value xxxxxxxx
+\v ASCII vertical tab (VT)
+\ooo Character with octal value ooo
+\xhh Character with hex value hh
+
+
+# Reading and Writing Files (ex 16)
+close – Closes the file. Like File->Save.. in your editor.
+read – Reads the contents of the file. You can assign the result to a variable.
+readline – Reads just one line of a text file.
+truncate – Empties the file. Watch out if you care about the file.
+write('stuff') – Writes ”stuff” to the file.
+seek(0) – Move the read/write location to the beginning of the file
