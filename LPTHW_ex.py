@@ -1,9 +1,23 @@
-# ex 17
+# ex 18
 
-from sys import argv
-from os.path import exists
+# take multiple arguments
+def print_two(*args):
+    arg1, arg2 = args
+    print(f"arg1: {arg1}, arg2: {arg2}")
 
-script, from_file, to_file = argv
+# the *args above is useless
+def print_two_again(arg1, arg2):
+    print(f"arg1: {arg1}, arg2: {arg2}")
 
-indata = open(from_file).read()
-out_file = open(to_file, 'w').write(indata)
+# this takes a single argument:
+def print_one(arg1):
+    print(f"arg1: {arg1}")
+
+# and this takes none:
+def no_thanks():
+   print("Hello.")
+
+print_two("Potato", "Tomato")
+print_two_again("Banana", "Apple")
+print_one("Cookies")
+no_thanks()
