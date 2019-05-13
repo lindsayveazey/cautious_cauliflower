@@ -1,61 +1,30 @@
-'''
-# ex 19
+# ex 21
+# more functions
 
-# long fx
+# This addition fx sums two variables, indicated as placeholder variables p and l.
+def add(p, l):
+    print(f"SUMMING {p} + {l}")
+    return p + l
 
-def tofu_and_greens(tofu_count, number_of_kale):
-    print(f"You have {tofu_count} types of tofu.")
-    print(f"Luckily, I have {number_of_kale} stalks of kale.")
+def subtract(p, l):
+    print(f"SUBTRACTING {p} + {l}")
+    return p - l
 
-print("We can give function numbers directly.")
-tofu_and_greens(2, 3)
+def multiply(p, l):
+    print(f"MULTIPLYING {p} * {l}")
+    return p * l
 
-print("We can also use variables from the script.")
-amount_of_tofu = 2
-amount_of_kale = 3
+def divide(p, l):
+    print(f"DIVIDING {p} / {l}")
+    return p / l
 
-tofu_and_greens(amount_of_tofu, amount_of_kale)
+print("Let's do some maths with functions exclusively.")
 
-print("We can calculate in the function as well...")
-tofu_and_greens(1+1, 2+1)
+# We have defined multiple fxs here. Each fx completes its respective operation on the values given inside the parentheses. 
+age = add(20, 8)
+weight = subtract(150, 15)
+age_again = multiply(7, 4)
+shoe_size = divide(36, 4)
 
-print("We can combine variables and math.")
-tofu_and_greens(amount_of_tofu + 50, amount_of_kale + 71)
-'''
-# ex 20
+print(f"Age: {age}, Weight: {weight}, Age (again): {age_again}, Shoe size: {shoe_size}.")
 
-# fx and files
-
-from sys import argv
-
-script, input_file = argv
-# create a fx called print_all
-def print_all(f):
-    print(f.read())
-# f is the file of interest
-def rewind(f):
-    f.seek(0)
-# printing the line count of f
-def print_a_line(line_count, f):
-    print(line_count, f.readline())
-# renaming the input file as a variable
-current_file = open(input_file)
-
-print("First let's print the whole file:\n")
-
-print_all(current_file)
-
-print("Now we rewind.")
-
-rewind(current_file)
-
-print("Let's print 3 lines:")
-
-current_line = 1
-print_a_line(current_line, current_file)
-
-current_line = current_line + 1
-print_a_line(current_line, current_file)
-
-current_line = current_line + 1
-print_a_line(current_line, current_file)
