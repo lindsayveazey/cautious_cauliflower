@@ -102,3 +102,17 @@ print("This query will process {} bytes.".format(dry_run_query_job.total_bytes_p
 
 safe_config = bq.QueryJobConfig(maximum_bytes_billed=10**10)
 
+
+### SQL queries ###
+
+# COUNT(), GROUP BY...HAVING
+
+query = """
+	SELECT COUNT(Column_name)
+	FROM `project.database.table`
+	GROUP BY Second_column_name 
+	HAVING COUNT(Column_name) > 10
+	"""
+
+
+
