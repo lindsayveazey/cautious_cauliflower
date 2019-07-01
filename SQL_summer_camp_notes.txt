@@ -1,0 +1,104 @@
+##### SQL Kaggle summer camp notes #####
+
+### Introduction to relational databases ###
+
+# Observations form rows
+# Variables form columns
+# Observatonal units form tables
+
+# https://www.kaggle.com/dansbecker/getting-started-with-sql-and-bigquery
+
+# 1) Use Python to import the package bigquery to use Google's API, BigQuery:
+
+from google.cloud import bigquery as bq
+
+# 2) Create "client" object to retrieve information from BigQuery datasets:
+
+client = bq.Client()
+
+# In BigQuery, each dataset is contained in a corresponding project.
+# 3a) Construct a reference to the dataset:
+
+dataset_ref = client.dataset('hacker_news', project = 'bigquery-public-data')
+
+# 3b) API request to fetch the dataset:
+
+dataset = client.get_dataset(dataset_ref)
+
+# If there is an error here, this means the dataset wasn't added to the kernel.
+
+#4) Print a list of all tables in the dataset:
+
+tables = list(client.list_tables(dataset))
+
+for table in tables:
+    print(table.table_id)
+
+# 5a) Construct a reference to a particular table by name:
+
+table_ref = dataset_ref.table('table_1234')
+
+# 5b) API request to fetch the table:
+
+table = client.get_table(table_ref)
+
+# 6) Print the table schema:
+
+table.schema
+
+# 7) Examine the table head 
+# for the first column
+# and simultaneously convert to a pandas DataFrame using to_dataframe():
+client.list_rows(table, selected_fields = table.schema[:1], max_results = 5).to_dataframe()
+
+
+### SQL queries ###
+
+# SELECT ... FROM
+
+SELECT 	Target_column_name # The column I'm ultimately targeting
+FROM `project.database.table` # Note the backticks ``
+
+# Note that you can SELECT all columns with a wildcard *
+
+# WHERE
+
+WHERE Filtering_column_name = 'Name123' 
+
+# 1) We pass these commands to Python using the following syntax:
+
+query = """
+	SELECT Target_column_name_1, Target_column_name_2
+	FROM `project.database.table`
+	WHERE Filtering_column_name = 'Name123'
+	"""
+
+# 2) Create a client object
+client = bigquery.Client()
+
+# 3) Set up the query
+query_job = client.query(query)
+
+# 4) API request to run the query and simultaneously return a pandas DataFrame
+query_item = query_job.to_dataframe()
+
+# 5) Inspect the new DataFrame
+query_item.Target_column_name.value_counts().head()
+
+
+### Dry run workflow ###
+
+# Define query =
+
+dry_run_config = bigquery.QueryJobConfig(dry_run = True)
+
+dry_run_query_job = client.query(query, job_config = dry_run_config)
+
+print("This query will process {} bytes.".format(dry_run_query_job.total_bytes_processed))
+
+
+### Limit query size ###
+# Set up the query (cancel the query if it would use too much of your quota, with the limit set to 10 GB)
+
+safe_config = bq.QueryJobConfig(maximum_bytes_billed=10**10)
+
