@@ -12,10 +12,17 @@ def question(prompt, hint, answer):
             print(answer)
             break
 
-##### Quiz #####
+##### Quiz: Stats edition #####
 
 print("For each question, type your response, then press ENTER to proceed; this triggers the answer to each open-ended quesiton. Type '?' to trigger a hint.\n\n")
 
-q1 = question("Here is q1.", "Here is hint 1.", "Here is answer 1.")
-q2 = question("Here is q2.", "Here is hint 2.", "Here is answer 2.")
+q1 = question("Question", "Hint", "Answer")
+
+q2 = question("Question", "Hint", "Answer")
+
+q3 = question("Question", "Hint", "Answer")
+
+q4 = question("Question", "Hint", "Answer")
+
+q5 = question("Question", "Hint", "Answer")
 

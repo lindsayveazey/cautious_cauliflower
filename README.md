@@ -14,4 +14,4 @@ Random_country_generator.ipynb: This notebook catalogues countries randomly gene
 
 SQL_summer_camp_notes.txt: Notes as I go through Kaggle's 2019 mini SQL course.
 
-quiz.py: DIY open-ended quiz coded in Python. The first commit is the template. Following commits will include questions about Python, statistics, SQL, and whatever else I feel like quizzing myself on.
+*_quiz.py: DIY open-ended quiz coded in Python. The first commit is the template. Following commits will include questions about Python, statistics, SQL, and whatever else I feel like quizzing myself on.
