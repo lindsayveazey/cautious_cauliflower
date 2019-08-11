@@ -16,9 +16,9 @@ def question(prompt, hint, answer):
 
 print("For each question, type your response, then press ENTER to proceed; this triggers the answer to each open-ended quesiton. Type '?' to trigger a hint.\n\n")
 
-q1 = question("[SQL- BigQuery] Name and define the six query clauses.", "SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY", "SELECT: determines which columns to include in the query's result set\n\n FROM: identifies the tables from which to draw data and how the tables should be joined\n\n WHERE: filters out unwanted data\n\n GROUP BY: used to group rows together by common column values\n\n HAVING: filters out unwanted groups\n\n ORDER BY: sorts the rows of the final result set by >=1 columns")
+q1 = question("[SQL] Name and define the six query clauses.", "SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY", "SELECT: determines which columns to include in the query's result set\n\n FROM: identifies the tables from which to draw data and how the tables should be joined\n\n WHERE: filters out unwanted data\n\n GROUP BY: used to group rows together by common column values\n\n HAVING: filters out unwanted groups\n\n ORDER BY: sorts the rows of the final result set by >=1 columns")
 
-q2 = question("[SQL- BigQuery] How to SELECT all?", "Wildcard.", "SELECT *")
+q2 = question("[SQL] Name and define the seven logical operators.", "LIKE, IN, BETWEEN, IS NULL, AND, OR, NOT, ORDER BY", "LIKE allows you to match similar values, instead of exact values.\n\nIN allows you to specify a list of values you’d like to include.\n\nBETWEEN allows you to select only rows within a certain range.\n\nIS NULL allows you to select rows that contain no data in a given column.\n\nAND allows you to select only rows that satisfy two conditions.\n\nOR allows you to select rows that satisfy either of two conditions.\n\nNOT allows you to select rows that do not match a certain condition.")
 
 q3 = question("[SQL- BigQuery] Write a description for the command: WHERE ...", "What are you targeting with the WHERE command? Consider the formatting.", "WHERE Filtering_column_name = 'Name123'")
 
@@ -41,14 +41,14 @@ q11 = question("[SQL- BigQuery] Step # 6) Print the table schema. ", "This is on
 
 q12 = question("[SQL- BigQuery] Step # 7) Examine the table head for the first column and simultaneously convert to a pandas DataFrame using to_dataframe():", "client.____(_____, selected_fields = table.schema[:1], _____).to_dataframe()", "client.list_rows(table, selected_fields = table.schema[:1], max_results = 5).to_dataframe()")
 
-q13 = question("[SQL- BigQuery] Write a description for the command: ORDER BY ...", "What would you want to accomplish with this command?", "Sequential ordering based on the column name in ORDER BY column name")
+q13 = question("[SQL] Write a description for the command: ORDER BY ...", "What would you want to accomplish with this command?", "Sequential ordering based on the column name in ORDER BY column name")
 
-q14 = question("[SQL- BigQuery] Write a command using the following commands: SELECT, FROM, ORDER BY.", "Specify where the columns and tables are named.", "SELECT col1, col2, ... \n\n FROM table_name \n\n ORDER BY col1, col2, ...")
+q14 = question("[SQL] Write a command using the following commands: SELECT, FROM, ORDER BY.", "Specify where the columns and tables are named.", "SELECT col1, col2, ... \n\n FROM table_name \n\n ORDER BY col1, col2, ...")
 
-q15 = question("[SQL- BigQuery] How would you change the order (ascending/descending) of the selection clled by the ORDER BY command?", "What two words could change the order here?", "ORDER BY col1, col2, ... ASC DESC")
+q15 = question("[SQL] How would you change the order (ascending/descending) of the selection clled by the ORDER BY command?", "What two words could change the order here?", "ORDER BY col1, col2, ... ASC DESC")
 
-q16 = question("[SQL- BigQuery] How would you group a selection called from col1?", "Think of the word 'group'...", "GROUP BY col2")
+q16 = question("[SQL] How would you group a selection called from col1?", "Think of the word 'group'...", "GROUP BY col2")
 
-q17 = question("[SQL- BigQuery] Write a description for each command: SELECT ... FROM ...", "Remember the formatting for FROM", "SELECT Target_column_name # The column I'm targeting ... FROM `project.database.table` # Note the backticks ``")
+q17 = question("[SQL] Write a description for each command: SELECT ... FROM ...", "Remember the formatting for FROM", "SELECT Target_column_name # The column I'm targeting ... FROM `project.database.table` # Note the backticks ``")
 
 

@@ -10,11 +10,11 @@
 
 # 1) Use Python to import the package bigquery to use Google's API, BigQuery:
 
-from google.cloud import bigquery as bq
+from google.cloud import bigquery
 
 # 2) Create "client" object to retrieve information from BigQuery datasets:
 
-client = bq.Client()
+client = bigquery.Client()
 
 # In BigQuery, each dataset is contained in a corresponding project.
 # 3a) Construct a reference to the dataset:
@@ -113,6 +113,15 @@ query = """
 	GROUP BY Second_column_name 
 	HAVING COUNT(Column_name) > 10
 	"""
+### LOGICAL OPERATORS ###
+
+# LIKE allows you to match similar values, instead of exact values.
+# IN allows you to specify a list of values you’d like to include.
+# BETWEEN allows you to select only rows within a certain range.
+# IS NULL allows you to select rows that contain no data in a given column.
+# AND allows you to select only rows that satisfy two conditions.
+# OR allows you to select rows that satisfy either of two conditions.
+# NOT allows you to select rows that do not match a certain condition.
 
 
 
